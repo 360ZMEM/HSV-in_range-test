@@ -4,7 +4,7 @@ import numpy as np
 import os
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QSlider
 from PyQt5.QtWidgets import QSpinBox, QPushButton, QFileDialog
-from PyQt5 import uic
+from PyQt5 import uic,QtCore
 from PyQt5.QtGui import QImage, QPixmap
 
 class MyWindow:
@@ -267,7 +267,7 @@ class MyWindow:
         self.ui.picshowlabel.setPixmap(QPixmap.fromImage(self.show))
 
 
-
+QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 app = QApplication([])
 mywindow = MyWindow()
 mywindow.ui.show()
